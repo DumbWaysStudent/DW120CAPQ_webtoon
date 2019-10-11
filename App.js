@@ -32,6 +32,7 @@ const AppNavigator = createStackNavigator(
         header: null
       }
     },
+	Detail: DetailScreen,
 	{
 		initialRouteName: 'Login',
 		defaultNavigationOptions: {
