@@ -33,12 +33,13 @@ const AppNavigator = createStackNavigator(
       }
     },
 	Detail: DetailScreen,
+	Detail_Ep: DetailEpisode,
 	{
 		initialRouteName: 'Login',
 		defaultNavigationOptions: {
 		  headerTitleStyle: {
 			fontWeight: 'bold',
-		  },
+		  }, 
 		}
 	}
   }	
