@@ -56,8 +56,14 @@ const AppNavigator = createStackNavigator(
         //headerTitle: 'home'
         header: null
       }
-    }
+    },
+	DetailImg: {
+      screen: CreateImage,
+      navigationOptions: {
+        header: null
+      }
+    } 
   }	
-);  
+);   
 
 export default createAppContainer(AppNavigator); 
