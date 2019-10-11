@@ -26,50 +26,57 @@ const AppNavigator = createStackNavigator(
         header: null
       }
     },
-    Login: {
-      screen: LoginScreen,
-      navigationOptions: {
-        header: null
-      }
-    },
-	Detail: DetailScreen,
-	Detail_Ep: DetailEpisode,
-	Eprofile: {
-      screen: EditProfile,
-      navigationOptions: {
-        //headerTitle: 'home'
-        header: null
-      }
-    },
-	Crtn: Creation,  
-	{
-		initialRouteName: 'Login',
-		defaultNavigationOptions: {
-		  headerTitleStyle: {
-			fontWeight: 'bold',
-		  }, 
-		}
-	},
-	Crt: {
+    Detail: DetailScreen,
+    Detail_Ep: DetailEpisode,
+    Crtn: Creation,
+    Crt: {
       screen: Create,
       navigationOptions: {
         //headerTitle: 'home'
         header: null
       }
     },
-	DetailImg: {
+    Eprofile: {
+      screen: EditProfile,
+      navigationOptions: {
+        //headerTitle: 'home'
+        header: null
+      }
+    },
+    Login: {
+      screen: LoginScreen,
+      navigationOptions: {
+        header: null
+      }
+    },
+    DetailImg: {
       screen: CreateImage,
       navigationOptions: {
         header: null
       }
     },
-	Update: {
+    Update: {
       screen: UpdateScreen,
       navigationOptions: {
         header: null
       }
+    },
+    UpdateImg: {
+      screen: UpdateImgScreen,
+      navigationOptions: {
+        header: null
+      }
     }
-  }	
-);   
+
+  },
+  {
+    initialRouteName: 'Login',
+    defaultNavigationOptions: {
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }
+  }
+);
 
 export default createAppContainer(AppNavigator); 
