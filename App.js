@@ -49,7 +49,14 @@ const AppNavigator = createStackNavigator(
 			fontWeight: 'bold',
 		  }, 
 		}
-	}
+	},
+	Crt: {
+      screen: Create,
+      navigationOptions: {
+        //headerTitle: 'home'
+        header: null
+      }
+    }
   }	
 );  
 
