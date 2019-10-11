@@ -20,11 +20,10 @@ This project is still on very early development stage. this Projext is used for 
 * comic Sharing
 * etc
 
-## Why Iyat?
+## Why Webtoon
 * free and and enjoy with HD image commic
 
-## Tech Stack
-* React Native for the Mobile Frontend
+## Tech* React Native for the Mobile Frontend
 
 ## Prerequisites
 * Make sure You had been install NodeJs in your system https://nodejs.org/
