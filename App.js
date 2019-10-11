@@ -62,7 +62,13 @@ const AppNavigator = createStackNavigator(
       navigationOptions: {
         header: null
       }
-    } 
+    },
+	Update: {
+      screen: UpdateScreen,
+      navigationOptions: {
+        header: null
+      }
+    }
   }	
 );   
 
