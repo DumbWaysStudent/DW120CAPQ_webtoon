@@ -34,6 +34,13 @@ const AppNavigator = createStackNavigator(
     },
 	Detail: DetailScreen,
 	Detail_Ep: DetailEpisode,
+	Eprofile: {
+      screen: EditProfile,
+      navigationOptions: {
+        //headerTitle: 'home'
+        header: null
+      }
+    },
 	{
 		initialRouteName: 'Login',
 		defaultNavigationOptions: {
@@ -43,6 +50,6 @@ const AppNavigator = createStackNavigator(
 		}
 	}
   }	
-); 
+);  
 
 export default createAppContainer(AppNavigator); 
