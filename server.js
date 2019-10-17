@@ -41,10 +41,10 @@ app.group("/api/v1", (router) => {
     router.get('/webtoons?title=keyword', webtoons.index);
     // [API] : 18.favorite_implementation
     router.get('/webtoons?is_favorite=true', authenticated, webtoons.index);
-	// [API] : 20.my_webtoon_creation_implementation
-    router.post('/users/:createdBy/webtoon', webtoons.insert);
-
-    router.get('/users/:id/webtoons/', webtoons.data);
+    // [API] : 20.my_webtoon_creation_implementation
+    router.get('/users/:id/webtoons/', authenticated, webtoons.data);
+    // [API] : 21.create_my_webtoon_implementation 
+    router.post('/users/:createdBy/webtoon', authenticated, webtoons.insert);
 
     router.put('/users/:createdBy/webtoon/:id', webtoons.update);
 
