@@ -20,10 +20,10 @@ exports.signin = (req, res) => {
     users.findOne({ where: { username: req.body.username } }).then(function (result) {
         if (result) {
             if (result.password == req.body.password) {
-                var generateToken = jwt.sign({ name: req.body.username }, '!@#456qwerty');
+                var generateToken = jwt.sign({ name: req.body.username }, 'qwer1234');
                 res.send({
                     "code": 200,
-                    "success": "user registered sucessfully",
+                    "success": "user sign in sucessfully",
                     "username": result.username,
                     "token": generateToken,
                 });
