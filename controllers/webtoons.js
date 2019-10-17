@@ -8,7 +8,7 @@ exports.index = (req, res) => {
     const favorite = req.query.is_favorite;
     const keyword = req.query.title;
     if (keyword) {
-        Webtoons.findAll({ where: { title: keyword } }).then(data => res.send(data))
+        Webtoons.findAll({ where: { title: { [Op.substring]: keyword } } }).then(data => res.send(data))
     }
     if (favorite) {
         if (favorite == 'true') {

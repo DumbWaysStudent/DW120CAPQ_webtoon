@@ -35,6 +35,8 @@ app.group("/api/v1", (router) => {
     router.post('/register', users.register);
     // [API] : 13.login_implementation
     router.post('/logins', users.signin);
+    // [API] : 19.search_webtoon_implementation 
+    router.get('/webtoons?title=keyword', webtoons.index);
 
     router.get('/webtoons?is_favorite=true', webtoons.index);
 
