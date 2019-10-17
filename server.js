@@ -16,17 +16,16 @@ const episodes = require("./controllers/episodes");
 const detailEpisodes = require("./controllers/detail");
 const users = require("./controllers/users");
 
-
-/*========================================================================*/
 app.use(bodyParser.json());
 
-/*router webtoon*/
+/*========================================================================*/
+
 app.group("/api/v1", (router) => {
-    // [API] : get all data webtoon
+    //[API] : 15.for_you_implementation
     router.get('/webtoons/', webtoons.index);
-    // [API] : get all data favourite
+    // [API] : 15.for_you_implementation
     router.get('/webtoons/favourite', webtoons.favorite);
-    // [API] : find all data
+    // [API] : 15.for_you_implementation
     router.get('/webtoons/find/:title', webtoons.find);
 
     router.get('/webtoons/:id/episodes', episodes.episode);
@@ -57,17 +56,9 @@ app.group("/api/v1", (router) => {
 
     router.delete('/users/:userid/webtoon/:id_webtoon/episode/:episodeid/image/:id', detailEpisodes.delete);
 
-
-
-
-
-
 })
 
-
-
-
-
 /*========================================================================*/
+
 /*listing port*/
 app.listen(port, () => console.log('connected'));  

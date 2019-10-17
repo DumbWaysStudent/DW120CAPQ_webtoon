@@ -1,6 +1,9 @@
 const Webtoons = require('../models').webtoons;
 const Episodes = require('../models').episodes;
 
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op
+
 exports.index = (req, res) => {
     const favorite = req.query.is_favorite;
     const keyword = req.query.title;
@@ -23,7 +26,7 @@ exports.favorite = (req, res) => {
 }
 exports.find = (req, res) => {
     var keyword = req.params.title;
-    Webtoons.findAll({ where: { title: keyword } }).then(data => res.send(data))
+    Webtoons.findAll({ where: { title: { [Op.substring]: keyword } } }).then(data => res.send(data))
 }
 exports.data = (req, res) => {
     Webtoons.findAll({ where: { createdBy: req.params.id } }).then(data => res.send(data))
