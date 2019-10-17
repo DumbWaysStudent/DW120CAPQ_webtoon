@@ -16,8 +16,10 @@ const episodes = require("./controllers/episodes");
 const detailEpisodes = require("./controllers/detail");
 const users = require("./controllers/users");
 
-app.use(bodyParser.json());
+//middlewares
+const { authenticated } = require('./middleware');
 
+app.use(bodyParser.json());
 /*========================================================================*/
 
 app.group("/api/v1", (router) => {
@@ -34,11 +36,11 @@ app.group("/api/v1", (router) => {
     // [API] : 14.register_implementation
     router.post('/register', users.register);
     // [API] : 13.login_implementation
-    router.post('/logins', users.signin);
+    router.post('/login', users.signin);
     // [API] : 19.search_webtoon_implementation 
     router.get('/webtoons?title=keyword', webtoons.index);
-
-    router.get('/webtoons?is_favorite=true', webtoons.index);
+    // [API] : 18.favorite_implementation
+    router.get('/webtoons?is_favorite=true', authenticated, webtoons.index);
 
     router.post('/users/:createdBy/webtoon', webtoons.insert);
 
