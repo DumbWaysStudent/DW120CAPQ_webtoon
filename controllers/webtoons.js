@@ -47,9 +47,14 @@ exports.update = (req, res) => {
     ).then(webtoon => {
         res.send({
             message: "success",
-            webtoon
+            ...req.body,
+            createdAt: req.body.createdAt,
+            updatedAt: req.body.updatedAt,
         })
     })
+}
+exports.episode = (req, res) => {
+    Webtoons.findAll({ where: req.params }).then(data => res.send(data))
 }
 exports.delete = (req, res) => {
     Webtoons.destroy({ where: req.params }).then(webtoon => {
