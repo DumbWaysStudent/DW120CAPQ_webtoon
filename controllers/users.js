@@ -7,7 +7,7 @@ exports.index = (req, res) => {
 
 exports.register = (req, res) => {
     users.create(req.body).then(webtoon => {
-        var generateToken = jwt.sign({ name: req.body.name }, 'qwer1234');
+        var generateToken = jwt.sign({ name: req.body.name }, 'my-secret-key');
         res.send({
             username: webtoon.username,
             token: generateToken
@@ -20,7 +20,7 @@ exports.signin = (req, res) => {
     users.findOne({ where: { username: req.body.username } }).then(function (result) {
         if (result) {
             if (result.password == req.body.password) {
-                var generateToken = jwt.sign({ name: req.body.username }, 'qwer1234');
+                var generateToken = jwt.sign({ name: req.body.username }, 'my-secret-key');
                 res.send({
                     "code": 200,
                     "success": "user sign in sucessfully",
