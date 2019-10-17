@@ -50,18 +50,17 @@ app.group("/api/v1", (router) => {
     // [API] : 22.update_detail_my_webtoon_implementation
     router.get('/users/:createdBy/webtoon/:id/episodes', authenticated, webtoons.episode);
     // [API] : 23.delete_my_webtoon_implementation
-    router.delete('/users/:createdBy/webtoon/:id', webtoons.delete);
-
-    router.post('/users/:id/webtoon/:id_webtoon/episode', episodes.insert);
-
-    router.put('/users/:userid/webtoon/:id_webtoon/episode/:id', episodes.update);
-
-    router.delete('/users/:userid/webtoon/:id_webtoon/episode/:id', episodes.delete);
-
-    router.post('/users/:userid/webtoon/:id_webtoon/episode/:id/image', detailEpisodes.insert);
-
-    router.delete('/users/:userid/webtoon/:id_webtoon/episode/:episodeid/image/:id', detailEpisodes.delete);
-
+    router.delete('/users/:createdBy/webtoon/:id', authenticated, webtoons.delete);
+    // [API] :24.create_my_episode_implementation
+    router.post('/users/:id/webtoon/:id_webtoon/episode', authenticated, episodes.insert);
+    // [API] :25.update_detail_my_episode_implementation
+    router.put('/users/:userid/webtoon/:id_webtoon/episode/:id', authenticated, episodes.update);
+    // [API] : 26.delete_my_episode_implementation
+    router.delete('/users/:userid/webtoon/:id_webtoon/episode/:id', authenticated, episodes.delete);
+    //[API] : 27.create_image_implementation
+    router.post('/users/:userid/webtoon/:id_webtoon/episode/:id/image', authenticated, detailEpisodes.insert);
+    //[API] : 28.delete_image_implementation
+    router.delete('/users/:userid/webtoon/:id_webtoon/episode/:episodeid/image/:id', authenticated, detailEpisodes.delete);
 })
 
 /*========================================================================*/

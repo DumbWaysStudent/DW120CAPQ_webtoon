@@ -29,7 +29,8 @@ exports.update = (req, res) => {
     ).then(webtoon => {
         res.send({
             message: "success",
-            webtoon
+            ...idwebtoonobj,
+            ...req.body
         })
     })
 }
