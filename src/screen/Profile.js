@@ -86,20 +86,6 @@ export default class Profile extends React.Component {
 
     }
 
-    //slider
-    componentWillMount() {
-        this.setState({
-            interval: setInterval(() => {
-                this.setState({
-                    position: this.state.position === this.state.dataSource.length ? 0 : this.state.position + 1
-                });
-            }, 2000)
-        });
-    }
-    componentWillUnmount() {
-        clearInterval(this.state.interval);
-    }
-    //end slider
 
     render() {
         const { navigation } = this.props;
@@ -126,7 +112,7 @@ export default class Profile extends React.Component {
                         <View
                             style={[styles.avatar, styles.avatarContainer, { marginTop: 100 }]}>
 
-                            <Image style={styles.avatar} source={{ uri: photo_profile }} />
+                            <Image style={styles.avatar} />
 
                         </View>
                         <View style={{ width: '100%', marginTop: 30 }}>

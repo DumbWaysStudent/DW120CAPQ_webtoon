@@ -86,6 +86,21 @@ export default class Favourite extends React.Component {
 
     }
 
+    //slider
+    componentWillMount() {
+        this.setState({
+            interval: setInterval(() => {
+                this.setState({
+                    position: this.state.position === this.state.dataSource.length ? 0 : this.state.position + 1
+                });
+            }, 2000)
+        });
+    }
+    componentWillUnmount() {
+        clearInterval(this.state.interval);
+    }
+    //end slider
+
     render() {
         return (
             <Content>

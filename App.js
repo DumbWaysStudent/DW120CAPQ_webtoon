@@ -15,7 +15,7 @@ import EditProfile from './src/screen/EditProfile';
 import LoginScreen from './src/screen/LoginScreen';
 import CreateImage from './src/screen/CreateImage';
 import UpdateScreen from './src/screen/UpdateScreen';
-import UpdateImgScreen from './src/screen/UpdateImgScreen';
+import UpdateImgScreen from './src/screen/UpdateImgScreen'; 
 
 const AppNavigator = createStackNavigator(
   {
