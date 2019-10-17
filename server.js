@@ -27,7 +27,7 @@ app.group("/api/v1", (router) => {
     router.get('/webtoons/favourite', webtoons.favorite);
     // [API] : 15.for_you_implementation
     router.get('/webtoons/find/:title', webtoons.find);
-
+    // [API] : 16.for_you_implementation
     router.get('/webtoons/:id/episodes', episodes.episode);
 
     router.get('/webtoons/:idWebtoon/episode/:idEpisode', detailEpisodes.index);
